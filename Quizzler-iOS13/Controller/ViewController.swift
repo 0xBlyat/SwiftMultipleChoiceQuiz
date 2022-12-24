@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         quizBrain.nextQuestion()
         
         // Timer to show button background color for 0.3 seconds
-        _ = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:#selector(updateUI), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:#selector(updateUI), userInfo: nil, repeats: false)
     
     }
     

@@ -30,8 +30,7 @@ struct QuizBrain {
     var score = 0
 
     // Tracks questions asked (to display score/questionsAsked)
-    // CURRENTLY DISABLED
-    // var questionsAsked = 0
+    var questionsAsked = 0
     
     // Checks if answer is correct or incorrect, and returns a bool with the appropriate answer
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
