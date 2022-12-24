@@ -19,9 +19,12 @@ struct QuizBrain {
         Question(q: "Which of these colours is NOT featured in the logo for Google?", a: ["Green", "Orange", "Blue"], correctAnswer: "Orange"),
         Question(q: "What alcoholic drink is made from molasses?", a: ["Rum", "Whisky", "Gin"], correctAnswer: "Rum"),
         Question(q: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile"], correctAnswer: "Gorilla"),
-        Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland"], correctAnswer: "Australia")
+        Question(q: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland"], correctAnswer: "Australia"),
+        Question(q: "Where is the tallest building in the world located?", a: ["China", "Malaysia", "Dubai"], correctAnswer: "Dubai"),
+        Question(q: "Who was the first woman to win a noble prize?", a: ["Marie Curie", "Lisa Meitner", "Gerty Cori"], correctAnswer: "Marie Curie")
 
     ]
+    
     
     // Tracks question number
     var questionNumber = 0
@@ -30,7 +33,7 @@ struct QuizBrain {
     var score = 0
 
     // Tracks questions asked (to display score/questionsAsked)
-    var questionsAsked = 0
+    // var questionsAsked = 0
     
     // Checks if answer is correct or incorrect, and returns a bool with the appropriate answer
     mutating func checkAnswer(_ userAnswer: String) -> Bool {

@@ -25,14 +25,8 @@ class ViewController: UIViewController {
     
     var quizBrain = QuizBrain()
     
-    struct QuizQuestions {
-        var question: String
-        var answer: String
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateUI()
     }
 
