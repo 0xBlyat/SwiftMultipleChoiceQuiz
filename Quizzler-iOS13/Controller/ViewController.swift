@@ -9,20 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // Question Label
     @IBOutlet var questionLabel: UILabel!
+    
+    // Progress Bar
     @IBOutlet var progressBar: UIProgressView!
     
-    
+    // Answer buttons
     @IBOutlet var option1: UIButton!
-    
     @IBOutlet var option2: UIButton!
-    
     @IBOutlet var option3: UIButton!
     
-    
+    // Score Label
     @IBOutlet var scoreLabel: UILabel!
-    
-
     
     var quizBrain = QuizBrain()
     
