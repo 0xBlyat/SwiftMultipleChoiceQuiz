@@ -11,15 +11,20 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var progressBar: UIProgressView!
-    @IBOutlet var trueButton: UIButton!
-    @IBOutlet var falseButton: UIButton!
+    
+    
+    @IBOutlet var option1: UIButton!
+    
+    @IBOutlet var option2: UIButton!
+    
+    @IBOutlet var option3: UIButton!
+    
+    
     @IBOutlet var scoreLabel: UILabel!
     
+
+    
     var quizBrain = QuizBrain()
-    
-    var useless = 0
-    
-    var timer = Timer()
     
     struct QuizQuestions {
         var question: String
@@ -34,7 +39,6 @@ class ViewController: UIViewController {
 
     // When button is pressed
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        timer.invalidate()
         let userAnswer = sender.currentTitle!
         let userGotItRight = quizBrain.checkAnswer(userAnswer)
         
@@ -50,8 +54,8 @@ class ViewController: UIViewController {
         // Ask next question
         quizBrain.nextQuestion()
         
-        // Timer to show button background color for 0.2 seconds
-        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector:#selector(updateUI), userInfo: nil, repeats: false)
+        // Timer to show button background color for 0.3 seconds
+        _ = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:#selector(updateUI), userInfo: nil, repeats: false)
     
     }
     
@@ -61,13 +65,24 @@ class ViewController: UIViewController {
     // Update progress bar
     // Invalidate timer (just in case)
     @objc func updateUI() {
+        // Get question text
         questionLabel.text = quizBrain.getQuestionText()
-        trueButton.backgroundColor = UIColor.clear
-        falseButton.backgroundColor = UIColor.clear
-        progressBar.progress = quizBrain.getProgress()
-        scoreLabel.text = "Score: \(quizBrain.getScore())"
-        timer.invalidate()
         
+        // Use the three on-screen buttons to show multiple choice answers
+        option1.setTitle(quizBrain.getQuestionAnswers()[0], for: .normal)
+        option2.setTitle(quizBrain.getQuestionAnswers()[1], for: .normal)
+        option3.setTitle(quizBrain.getQuestionAnswers()[2], for: .normal)
+        
+        // Reset background colors after displaying red/green for correct/incorrect, respectively
+        option1.backgroundColor = UIColor.clear
+        option2.backgroundColor = UIColor.clear
+        option3.backgroundColor = UIColor.clear
+        
+        // Update progress bar
+        progressBar.progress = quizBrain.getProgress()
+        
+        // Update score
+        scoreLabel.text = "Score: \(quizBrain.getScore())"
     }
 }
 
