@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     var quizBrain = QuizBrain()
     
+    var useless = 0
+    
     var timer = Timer()
     
     struct QuizQuestions {
