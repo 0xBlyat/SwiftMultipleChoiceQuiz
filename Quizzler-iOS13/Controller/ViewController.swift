@@ -27,6 +27,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Shuffle quiz questions
+        quizBrain.quiz.shuffle()
+        
+        // Update UI
         updateUI()
     }
 
@@ -47,7 +52,7 @@ class ViewController: UIViewController {
         // Ask next question
         quizBrain.nextQuestion()
         
-        // Timer to show button background color for 0.3 seconds
+        // Timer to show button background color for 0.3 seconds, then update UI
         Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:#selector(updateUI), userInfo: nil, repeats: false)
     
     }
