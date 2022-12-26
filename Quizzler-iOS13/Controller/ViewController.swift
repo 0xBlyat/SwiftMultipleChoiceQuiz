@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             sender.backgroundColor = UIColor.red
         }
         
-        // Function call to ask next question
+        // Function call to ask next question in array
         quizBrain.nextQuestion()
         
         // Timer to show button background color for 0.3 seconds, then update UI
