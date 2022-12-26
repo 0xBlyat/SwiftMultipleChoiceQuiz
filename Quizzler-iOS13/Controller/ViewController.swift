@@ -61,6 +61,9 @@ class ViewController: UIViewController {
         // Get question text
         questionLabel.text = quizBrain.getQuestionText()
         
+        // Shuffle answers just to add some randomness
+        quizBrain.quiz[quizBrain.questionNumber].answer.shuffle()
+        
         // Use the three on-screen buttons to show multiple choice answers
         option1.setTitle(quizBrain.getQuestionAnswers()[0], for: .normal)
         option2.setTitle(quizBrain.getQuestionAnswers()[1], for: .normal)

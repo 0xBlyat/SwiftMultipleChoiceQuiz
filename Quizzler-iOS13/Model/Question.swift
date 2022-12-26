@@ -10,7 +10,7 @@ import Foundation
 // Question struct
 struct Question {
     let text: String
-    let answer: [String]
+    var answer: [String]
     let correctAnswer: String
     
     init(q: String, a: [String], correctAnswer: String) {
