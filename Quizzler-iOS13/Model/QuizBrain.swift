@@ -23,7 +23,8 @@ struct QuizBrain {
         Question(q: "Where is the tallest building in the world located?", a: ["China", "Malaysia", "Dubai"], correctAnswer: "Dubai"),
         Question(q: "Who was the first woman to win a noble prize?", a: ["Marie Curie", "Lisa Meitner", "Gerty Cori"], correctAnswer: "Marie Curie"),
         Question(q: "Who was the first person to walk on the moon?", a: ["Buzz Aldrin", "Neil Armstrong", "John Glenn"], correctAnswer: "Neil Armstrong"),
-        Question(q: "Who invented the computer?", a: ["Alan Turing", "Bill Gates", "Charles Babbage"], correctAnswer: "Charles Babbage")
+        Question(q: "Who invented the computer?", a: ["Alan Turing", "Bill Gates", "Charles Babbage"], correctAnswer: "Charles Babbage"),
+        Question(q: "What is the only food that cannot go bad?", a: ["Dark Chocolate", "Canned Tuna", "Honey"], correctAnswer: "Honey")
     ]
     
     
