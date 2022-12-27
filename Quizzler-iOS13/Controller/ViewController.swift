@@ -85,13 +85,17 @@ class ViewController: UIViewController {
         // Update score
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         
+        // Check if hasReset flag was set
         if quizBrain.hasReset == 1 {
+            
             // Alert showing score and end of quiz
             let alert = UIAlertController(title: "You've finished the quiz", message: "Your got \(quizBrain.score) out of \(quizBrain.quiz.count) questions correct!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Restart?", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
+            
+            // Reset score to 0
             quizBrain.score = 0
             
             // Reset score label to 0
