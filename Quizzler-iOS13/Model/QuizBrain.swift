@@ -35,6 +35,7 @@ struct QuizBrain {
     // Tracks score
     var score = 0
     
+    // Check reset state to know when to display alert popup
     var hasReset = 0
 
     // Tracks questions asked (to display score/questionsAsked)

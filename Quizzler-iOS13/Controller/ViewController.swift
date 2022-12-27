@@ -86,12 +86,16 @@ class ViewController: UIViewController {
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         
         if quizBrain.hasReset == 1 {
-            let alert = UIAlertController(title: "You've finished the quiz", message: "Your score was \(quizBrain.score)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            // Alert showing score and end of quiz
+            let alert = UIAlertController(title: "You've finished the quiz", message: "Your got \(quizBrain.score) out of \(quizBrain.quiz.count) questions correct!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Restart?", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
             quizBrain.score = 0
+            
+            // Reset score label to 0
+            scoreLabel.text = "Score: 0"
         }
     }
 }
