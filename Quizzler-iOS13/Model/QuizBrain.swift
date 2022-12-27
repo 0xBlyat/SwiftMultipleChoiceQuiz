@@ -5,7 +5,7 @@
 //  Created by Tony Alhwayek on December 22, 2022
 //
 
-import Foundation
+import UIKit
 
 struct QuizBrain {
     // Array to store quiz questions
@@ -33,6 +33,8 @@ struct QuizBrain {
 
     // Tracks score
     var score = 0
+    
+    var hasReset = 0
 
     // Tracks questions asked (to display score/questionsAsked)
     // var questionsAsked = 0
@@ -45,6 +47,7 @@ struct QuizBrain {
         } else {
             return false
         }
+        
     }
     
     // Returns question text
@@ -69,11 +72,12 @@ struct QuizBrain {
     mutating func nextQuestion() {
         // continue or reset quiz, based on how many questions have been asked
          if(questionNumber < (quiz.count - 1)) {
+             hasReset = 0
              questionNumber += 1
          } else {
              // Reset questions count and score on repeat
+             hasReset = 1
              questionNumber = 0
-             score = 0
             // questionsAsked = 0
          }
     }

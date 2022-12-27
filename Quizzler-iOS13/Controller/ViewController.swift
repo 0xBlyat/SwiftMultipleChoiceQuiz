@@ -44,9 +44,9 @@ class ViewController: UIViewController {
         // Green for correct
         // Red for incorrect
         if (userGotItRight) {
-            sender.backgroundColor = UIColor.green
+            sender.backgroundColor = .green
         } else {
-            sender.backgroundColor = UIColor.red
+            sender.backgroundColor = .red
         }
         
         // Function call to ask next question in array
@@ -84,6 +84,15 @@ class ViewController: UIViewController {
         
         // Update score
         scoreLabel.text = "Score: \(quizBrain.getScore())"
+        
+        if quizBrain.hasReset == 1 {
+            let alert = UIAlertController(title: "You've finished the quiz", message: "Your score was \(quizBrain.score)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+            quizBrain.score = 0
+        }
     }
 }
 
