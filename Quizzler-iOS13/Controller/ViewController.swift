@@ -89,7 +89,17 @@ class ViewController: UIViewController {
         if quizBrain.hasReset == 1 {
             
             // Alert showing score and end of quiz
-            let alert = UIAlertController(title: "You've finished the quiz", message: "Your got \(quizBrain.score) out of \(quizBrain.quiz.count) questions correct!", preferredStyle: .alert)
+            
+//            self.performSegue(withIdentifier: "goToScore", sender: self)
+//
+//            func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//                if segue.identifier == "goToScore" {
+//                    let destinationVC = segue.destination as! ViewController
+//                    destinationVC.scoreLabel.text = String(quizBrain.getScore())
+//                }
+//            }
+            
+            let alert = UIAlertController(title: "You've finished the quiz", message: "You got \(quizBrain.score) out of \(quizBrain.quiz.count) questions correct!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("Restart?", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
             }))
